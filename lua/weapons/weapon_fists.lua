@@ -209,7 +209,7 @@ function PlayerLanded(player, inWater, onFloater, speed )
 			
 			filter = function( ent ) if ( ent:GetClass() == "prop_physics" ) then return true end end
 		} )
-		-- print( tr.HitPos, tr.Entity )
+		print( tr.HitPos, tr.Entity )
 
 		local ThornLine = tr.HitPos - player:GetPos()
 
@@ -232,7 +232,9 @@ function PlayerLanded(player, inWater, onFloater, speed )
 		end
 
 		timer.Create( "timer", .1 ,1, function() player:GodDisable() end )
+		-- player:GodEnable()
 
+		
 	end
 end
 hook.Add( "OnPlayerHitGround", "PlayerLanded", PlayerLanded )
